@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f5c5c">
+  <meta name="description" content="Segmento de Gestão SAHMT">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Segmento de Gestão SAHMT</title>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__badge">PWA SAHMT</div>
+      <h1>Segmento de Gestão SAHMT</h1>
+      <p>
+        Acesse rapidamente cada frente de gestão por meio de atalhos visuais
+        modernos, fluidos e organizados para uso em celular e desktop.
+      </p>
+    </header>
+
+    <main>
+      <section class="icon-grid" id="iconGrid" aria-label="Áreas de gestão"></section>
+    </main>
+
+    <footer class="footer-actions">
+      <a class="return-button" href="https://anestesiahmtforms.github.io/">
+        Retorne ao App
+      </a>
+    </footer>
+  </div>
+
+  <template id="cardTemplate">
+    <a class="icon-card" target="_blank" rel="noopener noreferrer">
+      <div class="icon-card__orb">
+        <div class="icon-card__glyph" aria-hidden="true"></div>
+      </div>
+      <div class="icon-card__content">
+        <h2></h2>
+        <p class="icon-card__hint">Toque para abrir</p>
+      </div>
+    </a>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
