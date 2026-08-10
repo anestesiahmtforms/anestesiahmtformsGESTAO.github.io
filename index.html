@@ -40,15 +40,23 @@
   </div>
 
   <template id="cardTemplate">
-    <a class="icon-card" target="_blank" rel="noopener noreferrer">
+    <article class="icon-card">
       <div class="icon-card__orb">
         <div class="icon-card__glyph" aria-hidden="true"></div>
       </div>
       <div class="icon-card__content">
         <h2></h2>
-        <p class="icon-card__hint">Toque para abrir</p>
+        <p class="icon-card__hint">Selecione a area desejada</p>
       </div>
-    </a>
+      <div class="icon-card__actions">
+        <a class="icon-card__button icon-card__button--primary" data-role="gestor" href="#" target="_blank" rel="noopener noreferrer">
+          Gestor
+        </a>
+        <a class="icon-card__button icon-card__button--secondary" data-role="equipe" href="#" target="_blank" rel="noopener noreferrer">
+          Equipe
+        </a>
+      </div>
+    </article>
   </template>
 
   <script src="app.js"></script>

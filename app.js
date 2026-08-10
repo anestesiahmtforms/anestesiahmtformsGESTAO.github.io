@@ -1,47 +1,58 @@
 const managementItems = [
   {
     title: "COORDENA\u00c7\u00c3O ADMINISTRATIVA",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O OPERACIONAL",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "COORDENA\u00c7\u00c3O CL\u00cdNICA",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DA QUALIDADE",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DAS \u00c1REAS ASSISTENCIAIS EXTRA BLOCO",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DE CONDUTA \u00c9TICA",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DE EQUIPAMENTOS",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DE PESSOAS",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DE PRONTU\u00c1RIO",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O DO AMBULAT\u00d3RIO PR\u00c9-ANEST\u00c9SICO",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   },
   {
     title: "GEST\u00c3O FINANCEIRA",
-    url: "#"
+    gestorUrl: "#",
+    equipeUrl: "#"
   }
 ];
 
@@ -55,6 +66,17 @@ function formatLabel(text) {
     .replace(/\bDc\b/g, "DC");
 }
 
+function configureAction(button, url, itemTitle, audienceLabel) {
+  button.href = url;
+
+  if (url === "#") {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.alert(`Informe o link de ${audienceLabel} para: ${formatLabel(itemTitle)}`);
+    });
+  }
+}
+
 function renderCards() {
   const fragment = document.createDocumentFragment();
 
@@ -63,19 +85,16 @@ function renderCards() {
     const title = card.querySelector("h2");
     const hint = card.querySelector(".icon-card__hint");
     const glyph = card.querySelector(".icon-card__glyph");
+    const gestorButton = card.querySelector('[data-role="gestor"]');
+    const equipeButton = card.querySelector('[data-role="equipe"]');
 
     title.textContent = formatLabel(item.title);
-    card.href = item.url;
     card.dataset.index = String(index + 1);
     card.style.animationDelay = `${index * 55}ms`;
 
-    if (item.url === "#") {
-      hint.textContent = "Link aguardando definicao";
-      card.addEventListener("click", (event) => {
-        event.preventDefault();
-        window.alert(`Informe o link para: ${formatLabel(item.title)}`);
-      });
-    }
+    hint.textContent = "Escolha entre Gestor ou Equipe";
+    configureAction(gestorButton, item.gestorUrl, item.title, "Gestor");
+    configureAction(equipeButton, item.equipeUrl, item.title, "Equipe");
 
     glyph.style.borderRadius = `${12 + (index % 5)}px`;
     glyph.style.transform = `rotate(${index % 2 === 0 ? -10 : 10}deg)`;
