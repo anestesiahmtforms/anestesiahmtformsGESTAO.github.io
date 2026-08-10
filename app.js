@@ -83,7 +83,6 @@ function renderCards() {
   managementItems.forEach((item, index) => {
     const card = cardTemplate.content.firstElementChild.cloneNode(true);
     const title = card.querySelector("h2");
-    const hint = card.querySelector(".icon-card__hint");
     const glyph = card.querySelector(".icon-card__glyph");
     const gestorButton = card.querySelector('[data-role="gestor"]');
     const equipeButton = card.querySelector('[data-role="equipe"]');
@@ -92,7 +91,6 @@ function renderCards() {
     card.dataset.index = String(index + 1);
     card.style.animationDelay = `${index * 55}ms`;
 
-    hint.textContent = "Escolha entre Gestor ou Equipe";
     configureAction(gestorButton, item.gestorUrl, item.title, "Gestor");
     configureAction(equipeButton, item.equipeUrl, item.title, "Equipe");
 
