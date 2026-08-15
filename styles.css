@@ -118,6 +118,10 @@ body::after {
     0 18px 34px rgba(7, 72, 93, 0.32);
 }
 
+.hero__logo-link {
+  text-decoration: none;
+}
+
 .hero__logo-lockup::before {
   content: "";
   position: absolute;
