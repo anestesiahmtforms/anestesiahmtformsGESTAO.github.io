@@ -1,5 +1,10 @@
 const managementItems = [
   {
+    title: "GEST\u00c3O DE DOCUMENTOS",
+    gestorUrl: "#",
+    equipeUrl: "#"
+  },
+  {
     title: "COORDENA\u00c7\u00c3O ADMINISTRATIVA",
     gestorUrl: "#",
     equipeUrl: "#"
