@@ -106,7 +106,7 @@ function renderCards() {
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(() => {
+      navigator.serviceWorker.register("./sw.js?v=20260818-2").catch(() => {
         // Silent fail keeps the app usable even if SW registration is blocked.
       });
     });
